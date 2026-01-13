@@ -7,7 +7,7 @@ import "./globals.css"
 const _inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Myne Assistant – AI for Your Mac",
+  title: "Myne – a local assistant for macOS",
   description:
     "The intelligent macOS assistant that connects to everything on your Mac. Claude Code for normal people.",
   generator: "v0.app",

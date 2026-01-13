@@ -1,20 +1,17 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import Image from "next/image"
 
 const integrations = [
-  { name: "Messages", icon: "💬", color: "bg-green-500" },
-  { name: "Calendar", icon: "📅", color: "bg-red-500" },
-  { name: "Notes", icon: "📝", color: "bg-yellow-500" },
-  { name: "Mail", icon: "✉️", color: "bg-blue-500" },
-  { name: "Reminders", icon: "✓", color: "bg-orange-500" },
-  { name: "WhatsApp", icon: "📱", color: "bg-green-600" },
-  { name: "Notion", icon: "📓", color: "bg-foreground" },
-  { name: "Slack", icon: "💼", color: "bg-[#4A154B]" },
-  { name: "Finder", icon: "📁", color: "bg-blue-400" },
-  { name: "Safari", icon: "🧭", color: "bg-blue-600" },
-  { name: "Photos", icon: "🖼️", color: "bg-gradient-to-br from-pink-500 to-yellow-500" },
-  { name: "Contacts", icon: "👥", color: "bg-amber-600" },
+  { name: "Gmail", image: "/images/gmail.png" },
+  { name: "Messages", image: "/images/messages.png" },
+  { name: "Calendar", image: "/images/calendar.png" },
+  { name: "Google Calendar", image: "/images/googlecalendar.png" },
+  { name: "Notion", image: "/images/notion.png" },
+  { name: "GitHub", image: "/images/github.png" },
+  { name: "Weather", image: "/images/weather.png" },
+  { name: "Notes", image: "/images/notes.png" },
 ]
 
 export function IntegrationsCarousel() {
@@ -51,10 +48,13 @@ export function IntegrationsCarousel() {
               key={`${integration.name}-${index}`}
               className="flex-shrink-0 w-32 h-32 rounded-2xl bg-card border border-border flex flex-col items-center justify-center gap-3 hover:border-accent/50 transition-colors cursor-pointer group"
             >
-              <div
-                className={`w-12 h-12 rounded-xl ${integration.color} flex items-center justify-center text-2xl shadow-lg group-hover:scale-110 transition-transform`}
-              >
-                {integration.icon}
+              <div className="w-16 h-16 relative group-hover:scale-110 transition-transform">
+                <Image
+                  src={integration.image}
+                  alt={integration.name}
+                  fill
+                  className="object-contain"
+                />
               </div>
               <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">
                 {integration.name}
